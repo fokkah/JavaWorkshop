@@ -22,47 +22,59 @@ public class Calculator {
 
     public static void main(String[] args) {
 
-
 //Welcome text
-        System.out.println("Welcome to fokka's calculator project!");{
+        System.out.println("Welcome to fokka's calculator project!");
+        {
         }
 //Scanner init and description
         Scanner input = new Scanner(System.in);
+        while (true) {
 
 //Variables
-        char op; double n1, n2, result;
-        System.out.println("Input number");
-        n1 = input.nextDouble();
-        System.out.println("Input operator");
-        op = input.next().charAt(0);
-        System.out.println("Input number");
-        n2 = input.nextDouble();
+            char op;
+            long n1, n2, result;
+            System.out.println("Input number");
+            n1 = input.nextLong();
+            System.out.println("Input operator");
+            op = input.next().charAt(0);
+            System.out.println("Input number");
+            n2 = input.nextLong();
 
 //Switch operations
-        switch (op){
-            case '+':
-                result = n1 + n2;
-                System.out.println(n1 + "+" + n2 + "=" + result);
-                break;
-            case '-':
-                result = n1 - n2;
-                System.out.println(n1 + "-" + n2 + "=" + result);
-                break;
-            case '/':
-                result = n1 / n2;
-                System.out.println(n1 + "/" + n2 + "=" + result);
-                break;
-            case '*':
-                result = n1 * n2;
-                System.out.println(n1 + "*" + n2 + "=" + result);
-                break;
+            switch (op) {
+                case '+':
+                    result = n1 + n2;
+                    System.out.println(n1 + "+" + n2 + "=" + result);
+                    break;
+                case '-':
+                    result = n1 - n2;
+                    System.out.println(n1 + "-" + n2 + "=" + result);
+                    break;
+                case '/':
+                    result = n1 / n2;
+                    System.out.println(n1 + "/" + n2 + "=" + result);
+                    break;
+                case '*':
+                    result = n1 * n2;
+                    System.out.println(n1 + "*" + n2 + "=" + result);
+                    break;
 
-            default:
-                System.out.println("Cant you read? Use only one of the four basic operators");
+                default:
+                    System.out.println("Cant you read? Use only one of the four basic operators");
+                    continue;
+            }
+
+            System.out.println("[c]ontinue to use the calc, or [e]nd?");
+            if (input.next().equals("e")) {
                 break;
+            } else {
+                System.out.println("Welcome back to the calc");
+            }
+
+
         }
 
 
-        }
     }
+}
 
